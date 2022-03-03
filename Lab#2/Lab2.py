@@ -5,7 +5,6 @@ with open("input.txt") as file:
 l, ind = len(n), 0
 
 for x in range(len(n))[::-1]:
-  index = n.index(n[x])
   if not (not n[x] % 2 and x%2):
     del(n[x])
 
