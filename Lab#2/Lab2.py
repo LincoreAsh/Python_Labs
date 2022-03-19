@@ -5,7 +5,7 @@ import time, json, random
 from random import randint
 start = time.time()
 rnd_length = [10, 100, 1000, 10000, 100000, 1000000]  # Массив для случайной длины числа
-text = [randint(1, random.choice(rnd_length)) for i in range(1000)]  # Заполнение массива случайными числами
+text = [randint(1, random.choice(rnd_length)) for i in range(100)]  # Заполнение массива случайными числами
 with open('input.txt', 'w') as fw:  # Запись случайных чисел в файл, если его нету, он создаётся
     json.dump(text, fw)
 with open("input.txt", 'r') as fr:  # Читаем файл
