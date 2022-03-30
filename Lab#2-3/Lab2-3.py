@@ -11,7 +11,7 @@ def task():
         with open("input.txt", "r") as file:   # открываем файл
             buffer = file.read(buffer_len)   # читаем первый блок
             if not buffer:  # если файл пустой
-                print("\nФайл text.txt в директории проекта пустой.\nДобавьте не пустой файл в директорию или переименуйте существующий *.txt файл.")
+                print("\nФайл input.txt в директории проекта пустой.\nДобавьте не пустой файл в директорию или переименуйте существующий *.txt файл.")
             while buffer: # пока файл не пустой
                 while (buffer < '0' or buffer > '9' or buffer == " ") and buffer:  #ищем цифры
                     buffer = file.read(buffer_len)   # читаем очередной блок
