@@ -43,10 +43,11 @@ def task():
             for x in range(len(text))[::-1]:  # Удаление нечетных чисел на четных местах
                 if not (x % 2 and not text[x] % 2):
                     del (text[x], posledov_num[x], digits_num[x], index[x])
-            for x in text:
-                print("Число =", posledov_num[count], "; Номер символа в последовательности, с которого начинается число =",
-                        index[count], "; Количество цифр в числе =", digits_num[count])
-                count += 1
+            if len(text) > 0:
+                for i in range(len(text)):
+                    print("Число =", posledov_num[count], "; Номер символа в последовательности, с которого начинается число =",index[x], "; Количество цифр в числе =", digits_num[x])
+            else:
+                print("В файле нет чисел")
     except FileNotFoundError:
         print("Error \nФайл input.txt в директории проекта не обнаружен. \nДобавьте файл в директорию или переименуйте существующий *txt файл")
         quit()
