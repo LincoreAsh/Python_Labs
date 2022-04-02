@@ -45,7 +45,7 @@ def task():
                     del (text[x], posledov_num[x], digits_num[x], index[x])
             if len(text) > 0:
                 for i in range(len(text)):
-                    print("Число =", posledov_num[count], "; Номер символа в последовательности, с которого начинается число =",index[x], "; Количество цифр в числе =", digits_num[x])
+                    print("Число =", posledov_num[i], "; Номер символа в последовательности, с которого начинается число =",index[i], "; Количество цифр в числе =", digits_num[i])
             else:
                 print("В файле нет чисел")
     except FileNotFoundError:
