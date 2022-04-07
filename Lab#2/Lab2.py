@@ -20,10 +20,10 @@ with open("text.txt", "r") as file:   # открываем файл
         while (buffer < '0' or buffer > '9')  and buffer:  #ищем цифры
             buffer = file.read(buffer_len)   # читаем очередной блок
         while (buffer >= '0' and buffer <= '9' or buffer == " " or buffer == "." or buffer < '0' or buffer > '9') and buffer:  #обрабатываем цифры
-            if (buffer < '0' or buffer > '9')  and buffer:
-                number += " "
-            else:
+            if (buffer >= '0' and buffer <= '9' or buffer == ".") and buffer:
                 number += buffer
+            else:
+                number += " "
             digit += number
             buffer = file.read(buffer_len)  # читаем очередной блок
             number = ""  # готовим переменные для нового цикла
