@@ -19,8 +19,11 @@ with open("text.txt", "r") as file:   # открываем файл
     while buffer: # пока файл не пустой
         while (buffer < '0' or buffer > '9')  and buffer:  #ищем цифры
             buffer = file.read(buffer_len)   # читаем очередной блок
-        while (buffer >= '0' and buffer <= '9' or buffer == " " or buffer == ".") and buffer:  #обрабатываем цифры
-            number += buffer
+        while (buffer >= '0' and buffer <= '9' or buffer == " " or buffer == "." or buffer < '0' or buffer > '9') and buffer:  #обрабатываем цифры
+            if (buffer < '0' or buffer > '9')  and buffer:
+                number += " "
+            else:
+                number += buffer
             digit += number
             buffer = file.read(buffer_len)  # читаем очередной блок
             number = ""  # готовим переменные для нового цикла
