@@ -49,5 +49,5 @@ with open("text.txt", "r") as file:   # открываем файл
         for i in range(len(text)):
             print("Число =", posledov_num[i], "; Номер символа в последовательности, с которого начинается число =",index[i], "; Количество цифр в числе =", digits_num[i])
     else:
-        print("В файле нет чисел")
+        print("В файле отсутствуют числа или нету чисел соответствующих условию")
 print("Program time: {:>.10f}".format(time.time() - start) + " seconds.")
