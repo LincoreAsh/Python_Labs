@@ -61,7 +61,7 @@ try:
 
     for i in range(size):  # формируем подматрицу B
         for j in range(size):
-            B[i][j] = F[size+i][size + row_q % 2 + j]
+            B[i][j] = F[i][size + row_q % 2 + j]
     time_prev = time_next
     time_next = time.time()
     print_matrix(B, "B", time_next - time_prev)
