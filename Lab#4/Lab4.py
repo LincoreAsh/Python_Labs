@@ -61,7 +61,7 @@ try:
 
     for i in range(size):  # формируем подматрицу B
         for j in range(size):
-            B[i][j] = F[i][size + row_q % 2 + j]
+            B[i][j] = F[i][row_q % 2 + j + size]
     time_prev = time_next
     time_next = time.time()
     print_matrix(B, "B", time_next - time_prev)
@@ -102,7 +102,7 @@ try:
         for j in range(row_q):
             s = 0
             for m in range(row_q):
-                s = s + A[i][m] * F[m][j]
+                s = s + F[i][m] * A[m][j]
             AF[i][j] = s
     time_prev = time_next
     time_next = time.time()
@@ -115,14 +115,14 @@ try:
     time_next = time.time()
     print_matrix(FT, "F^T", time_next - time_prev)
 
-    for i in range(row_q):  # K*AT
+    for i in range(row_q):  # K*FT
         for j in range(row_q):
             A[i][j] = K * FT[i][j]
     time_prev = time_next
     time_next = time.time()
     print_matrix(F, "K*F^T", time_next - time_prev)
 
-    for i in range(row_q):  # (F*A)-(K*AT)
+    for i in range(row_q):  # (A*F)-(K*FT)
         for j in range(row_q):
             AF[i][j] = AF[i][j] - A[i][j]
     time_prev = time_next
